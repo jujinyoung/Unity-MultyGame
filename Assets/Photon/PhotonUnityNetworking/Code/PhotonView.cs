@@ -301,7 +301,7 @@ namespace Photon.Pun
                     return;
                 }
                 
-                if (value == 0)
+                if (value == 0 && this.viewIdField != 0)
                 {
                     PhotonNetwork.LocalCleanPhotonView(this);
                 }

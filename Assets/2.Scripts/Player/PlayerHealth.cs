@@ -8,8 +8,7 @@ using Photon.Realtime;
 
 public class PlayerHealth : MonoBehaviourPunCallbacks
 {
-    public int startingHealth = 100;
-    public int currentHealth;
+    public int currentHealth = 100;
     Slider healthSlider;
     Image damageImage;
     public AudioClip deathClip;
@@ -34,7 +33,6 @@ public class PlayerHealth : MonoBehaviourPunCallbacks
         healthSlider = GameObject.Find("Slider").GetComponent<Slider>();
         damageImage = GameObject.Find("DamageImage").GetComponent<Image>();
         gameOverManager = GameObject.Find("Canvas").GetComponent<GameOverManager>();
-        currentHealth = startingHealth;
     }
 
     // Update is called once per frame
