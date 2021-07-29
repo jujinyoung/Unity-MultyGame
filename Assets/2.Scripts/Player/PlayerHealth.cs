@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviourPunCallbacks
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
 
-    bool isDead = false;    //죽음 유무
+    public static bool isDead = false;    //죽음 유무
     bool damaged = false;   //데미지 유무
 
     void Awake()
@@ -62,11 +62,13 @@ public class PlayerHealth : MonoBehaviourPunCallbacks
         playerAudio.Play();
         if(currentHealth <= 0 && !isDead)
         {
+            photonView.RPC("Death", RpcTarget.Others);
             Death();
             gameOverManager.GameOver(1.0f,2.0f);
         }
     }
 
+    [PunRPC]
     void Death()
     {
         isDead = true;
@@ -80,6 +82,7 @@ public class PlayerHealth : MonoBehaviourPunCallbacks
 
         playerMovement.enabled = false;
         playerShooting.enabled = false;
+        Destroy(gameObject, 3.0f);
     }
 
     public void RestartLevel()

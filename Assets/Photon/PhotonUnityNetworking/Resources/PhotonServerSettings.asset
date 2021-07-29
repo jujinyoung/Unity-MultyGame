@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppSettings:
     AppIdRealtime: 241ef4f7-6f4c-42c8-9a02-f2a1d20b8e5d
+    AppIdFusion: 
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
@@ -41,6 +42,7 @@ MonoBehaviour:
   - Shoot
   - DisableEffects
   - Spawn
+  - Death
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

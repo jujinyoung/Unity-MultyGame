@@ -10,7 +10,7 @@ public class GameMgr : MonoBehaviourPunCallbacks
     void Start()
     {
         //플레이어생성
-        PhotonNetwork.Instantiate("Player", new Vector3(Random.Range(0,3), Random.Range(0,3), Random.Range(0,3)), Quaternion.identity);
+        PhotonNetwork.Instantiate("Player", new Vector3(Random.Range(0,3), 0, Random.Range(0,3)), Quaternion.identity);
         PhotonNetwork.IsMessageQueueRunning = true;
     }
 }
